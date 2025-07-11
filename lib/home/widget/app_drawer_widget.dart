@@ -1,5 +1,6 @@
 import 'package:chat_app/login/page/login_page.dart';
 import 'package:chat_app/profile/page/profile_page.dart';
+import 'package:chat_app/settings/page/settings_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -33,7 +34,11 @@ class AppDrawerWidget extends StatelessWidget {
               Navigator.push(context, MaterialPageRoute(builder: (_)=>ProfilePage()));
             },
             child: const ListTile(title: Text("Profile"))),
-          const ListTile(title: Text("Settings")),
+          InkWell(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (_)=> SettingsPage()));
+            },
+            child: const ListTile(title: Text("Settings"))),
           InkWell(
             onTap: ()=> logout(context),
             child: const ListTile(title: Text("LogOut"))),

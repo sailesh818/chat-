@@ -10,7 +10,6 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-
   String? email;
   String? photo;
   bool isloading = true;
@@ -37,7 +36,6 @@ class _ProfilePageState extends State<ProfilePage> {
             email = doc['email'];
             photo = doc['photo'];
             isloading = false;
-
           });
         } else {
           throw Exception("User document not found");

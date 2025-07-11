@@ -9,11 +9,9 @@ import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
-
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
-
 class _LoginPageState extends State<LoginPage> {
   final emailcontroller = TextEditingController();
   final passwordcontroller = TextEditingController();
@@ -25,23 +23,19 @@ class _LoginPageState extends State<LoginPage> {
     );
     return;
   }
-
   try {
     UserCredential userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(
       email: emailcontroller.text, 
       password: passwordcontroller.text,
     );
-    
     User? user = userCredential.user;
     if (user != null) {
       final uid = user.uid;
       final email = user.email ?? "";
       final username = email.split('@')[0];
       final photo = username.isNotEmpty ? username[0].toUpperCase() : "?";
-
       final userDoc = FirebaseFirestore.instance.collection('users').doc(uid);
       final docSnapshot = await userDoc.get();
-
       if (!docSnapshot.exists) {
         await userDoc.set({
           'email': email,
@@ -50,16 +44,13 @@ class _LoginPageState extends State<LoginPage> {
           'createdAt': Timestamp.now(),
         });
       }
-
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => HomePage()));
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Successful login")));
     }
-  } catch (e) {
-    
+  } catch (e) { 
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(e.toString())));
   }
 }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,8 +58,8 @@ class _LoginPageState extends State<LoginPage> {
       body: ListView(
         children: [
           AuthTextField(controller: emailcontroller, label: "Email"),
+          SizedBox(height: 10,),
           AuthTextField(controller: passwordcontroller, label: "Password", obscure: false),
-          
           Padding(
             padding: const EdgeInsets.only(left: 200, top: 4),
             child: InkWell(

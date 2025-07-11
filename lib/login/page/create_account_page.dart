@@ -39,6 +39,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
         padding: const EdgeInsets.only(top: 50),
         children: [
           AuthTextField(controller: emailcontroller, label: "Email"),
+          SizedBox(height: 10,),
           AuthTextField(controller: passwordcontroller, label: "Password", obscure: true),
           const SizedBox(height: 25),
           AuthButton(text: "Create Account", onPressed: () => create(context)),
