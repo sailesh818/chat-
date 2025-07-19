@@ -1,4 +1,4 @@
-import 'package:chat_app/landing/page/landing_page.dart';
+import 'package:chat_app/login/page/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData.light(),
           darkTheme: ThemeData.dark(),
             themeMode: dark ? ThemeMode.dark : ThemeMode.light,
-            home: const TravelLandingPage(),
+            home: LoginPage()
         );
       },
       
