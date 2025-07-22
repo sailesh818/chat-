@@ -1,6 +1,6 @@
-import 'package:chat_app/home/page/home_page.dart';
-import 'package:chat_app/login/widget/auth_button.dart';
-import 'package:chat_app/login/widget/auth_text_field.dart';
+import 'package:chat_app/view/home/page/home_page.dart';
+import 'package:chat_app/view/login/widget/auth_button.dart';
+import 'package:chat_app/view/login/widget/auth_text_field.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
