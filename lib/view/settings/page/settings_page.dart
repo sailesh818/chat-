@@ -1,7 +1,7 @@
 //import 'package:chat_app/home/page/home_page.dart';
 import 'package:chat_app/main.dart';
-import 'package:chat_app/settings/widget/settings_section_widget.dart';
-import 'package:chat_app/settings/widget/settings_tile_widget.dart';
+import 'package:chat_app/view/settings/widget/settings_section_widget.dart';
+import 'package:chat_app/view/settings/widget/settings_tile_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
